@@ -1,7 +1,5 @@
 import 'package:dtt_app/thema/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Information extends StatefulWidget {
@@ -49,10 +47,13 @@ class _InformationState extends State<Information> {
                       children: [
                         Text("by DTT"),
                         GestureDetector(
-                          child:Text( "d-tt.nl",style: TextStyle(color: Colors.blue),),
+                          child: Text(
+                            "d-tt.nl",
+                            style: TextStyle(color: Colors.blue),
+                          ),
                           onTap: () async {
                             final url = "https://www.d-tt.nl/";
-                            if(await canLaunchUrl(Uri.parse(url))){
+                            if (await canLaunchUrl(Uri.parse(url))) {
                               await launchUrl(Uri.parse(url));
                             }
                           },
